@@ -4,17 +4,17 @@ import data
 
 # Part 1
 
-def first_element(big_list:list) -> list: #returns first value of each integer list within big_list
+def first_element(big_list:list[list[int]]) -> list: #returns first value of each integer list within big_list
     return [int_list[0] for int_list in big_list if int_list != []]
 
 # Part 2
 
-def x_coordinates(point_list:list) -> list: #lists the x-coordinates for each point in point_list
+def x_coordinates(point_list:list[data.Point]) -> list: #lists the x-coordinates for each point in point_list
     return [point.x for point in point_list]
 
 # Part 3
 
-def are_in_positive_quadrant(point_list:list) -> list: #returns all points in first quadrant from point_list
+def are_in_positive_quadrant(point_list:list[data.Point]) -> list: #returns all points in first quadrant from point_list
     return [point for point in point_list if point.x > 0 and point.y > 0]
 
 # Part 4
@@ -29,6 +29,6 @@ def manhattan_distance(point1:data.Point, point2:data.Point) -> float: #returns 
 
 # Part 6
 
-def distance_all(points:list) -> list: #returns distance from origin of points in points
+def distance_all(points:list[data.Point]) -> list: #returns distance from origin of points in points
     origin = data.Point(0, 0)
     return [distance(origin, point) for point in points]
